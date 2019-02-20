@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Brain Train</string>
+    <string name="game_over">Game Over</string>
+    <string name="play_again">Play Again</string>
+    <string name="intro">GO!</string>
+    <string name="winning">Congratulation!</string>
+    <string name="purpose">Welcome , the target of this game is to answer
+        at least 15 problem correctly in just 45 seconds, think you can do it ? Give it a go !</string>
+    <string name="copyright">Programmed by Enigma © 2018</string>
+</resources>
