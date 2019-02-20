@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     int totalAnsweredQuestions = 0;
     int timerValue = 45_000;
 
-    //------------------- overrided methods ---------------------
+    //------------------- override methods ---------------------
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -162,16 +162,18 @@ public class MainActivity extends AppCompatActivity {
         boxList.get(correctBoxIndex).setText(Integer.toString(correctAnswer));
 
         //Put the other  answers in the boxes to cover it!
-        // and make one number identical in last digit with the correct answer
+        // and make one answer ( The copy cat answer ) identical in last digit with the correct answer
 
-        int lastDigitIndex = indexGenerator.nextUniqueInt(4,correctBoxIndex);
+        //Generate random place for the copy cat answer (excluding the correct answer box index )
+        int copyCatBoxIndex = indexGenerator.nextUniqueInt(4, correctBoxIndex);
+
         for (int i = 0; i < 4; i++) {
             if (i != correctBoxIndex) {
                 int randomAnswer = myRandomNumber.nextUniqueInt(101,correctAnswer);
                 int lastDigit = randomAnswer % 10;
-                int cLastDigit = correctAnswer % 10;
-                if (lastDigitIndex == i) {
-                    while (lastDigit != cLastDigit) {
+                int correctAnswerLastDigit = correctAnswer % 10;
+                if (copyCatBoxIndex == i) {
+                    while (lastDigit != correctAnswerLastDigit) {
                         randomAnswer = myRandomNumber.nextUniqueInt(101,correctAnswer);
                         lastDigit = randomAnswer % 10;
                     }
